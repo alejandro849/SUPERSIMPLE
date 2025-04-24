@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        ### **Flujo de trabajo del código con el código incluido:**
+
+1. **Se presiona el botón "scissors"**  
+   ```html
+   <button onclick="playGame('scissors');">scissors</button>
+   ```
+   - El usuario hace clic en el botón, lo que ejecuta la función `playGame` con el argumento `'scissors'`.
+
+2. **Se ejecuta la función `playGame('scissors')`**  
+   ```js
+   function playGame(playerMove) {
+   ```
+   - Se llama a `playGame` y el argumento `'scissors'` se asigna al parámetro `playerMove`.
+
+3. **Dentro de `playGame`, se llama a `pickComputerMove()`**  
+   ```js
+   const computerMove = pickComputerMove();
+   ```
+   - Se ejecuta la función `pickComputerMove` para determinar la jugada de la computadora.
+
+4. **`pickComputerMove` genera un número aleatorio**  
+   ```js
+   const randomNumber = Math.random();
+   ```
+   - `Math.random()` genera un valor entre 0 y 1.
+
+5. **Se asigna un movimiento a `computerMove` basado en el número aleatorio**  
+   ```js
+   if (randomNumber >= 0 && randomNumber < 1/3){
+       computerMove = 'rock';
+   } else if (randomNumber >= 1/3 && randomNumber < 2/3){
+       computerMove = 'paper';
+   } else if (randomNumber >= 2/3 && randomNumber < 1){
+       computerMove = 'scissors';
+   }
+   ```
+   - Dependiendo del número generado, `computerMove` será `'rock'`, `'paper'` o `'scissors'`.
+
+6. **`pickComputerMove` retorna `computerMove`**  
+   ```js
+   return computerMove;
+   ```
+   - Devuelve la elección de la computadora.
+
+7. **Se inicializa `result` como una cadena vacía**  
+   ```js
+   let result = '';
+   ```
+   - Se crea la variable `result` para almacenar el resultado del juego.
+
+8. **Se compara `playerMove` con `'scissors'`**  
+   ```js
+   if (playerMove === 'scissors'){
+   ```
+   - Como `playerMove` tiene el valor `'scissors'`, entra en este bloque `if`.
+
+9. **Se compara `computerMove` con `'rock'`, `'paper'` y `'scissors'`**  
+   ```js
+       if (computerMove === 'rock'){
+           result = 'you lose';
+       } else if (computerMove === 'paper'){
+           result = 'you win';
+       } else if (computerMove === 'scissors'){
+           result = 'tie';
+       }
+   ```
+   - Se compara la jugada de la computadora con `'rock'`, `'paper'` y `'scissors'` para determinar el resultado.
+
+10. **Se asigna el resultado correspondiente a `result`**  
+    - Ya se asignó dentro del bloque `if`.
+
+11. **Se muestra el resultado en una alerta**  
+   ```js
+   alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result}`);
+   ```
+   - Se muestra el mensaje con la elección del jugador, la elección de la computadora y el resultado del juego.
+
+---
+
+### **Correcciones y mejoras hechas:**
+1. **Aclara la diferencia entre argumento y parámetro.**
+2. **Especifica que `playerMove` recibe el valor `'scissors'`.**
+3. **Mantiene la lógica del código pero con explicaciones más precisas.**
+
+
+    </p>
+</body>
+</html>
